@@ -4,7 +4,7 @@ Jalankan perintah `npm install` untuk menginstall dependensi yang dibutuhkan. Ke
 
 ### Screenshot
 Maps dengan marker:
-![Maps dengan marker](http://url/to/img.png)
+<img src="./screenshot/Screenshot_16.png" style="max-width:100%" alt="Maps dengan marker"/>
 
 Popup informasi marker:
-![Popup informasi marker](http://url/to/img.png)
+<img src="./screenshot/Screenshot_17.png" style="max-width:100%" alt="Popup informasi marker"/>
