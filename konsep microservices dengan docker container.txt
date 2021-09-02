@@ -1,0 +1,12 @@
+Dalam proses pembuatan system, system tersebut dipisahkan menjadi beberapa bagian, seperti front end, back end, dan database.
+Dalam back end dan database dapat dipisahkan kembali menjadi beberapa bagian service, seperti service user dan service katalog.
+Kedua service tersebut menggunakan PHP untuk proses pembuatan API dan MySQL sebagai database managemennya.
+Masing-masing bagian tersebut kemudian di deploy ke dalam docker container yang berbeda-beda. Setiap bagian system kemudian saling berhubungan dengan port yang sudah di setup sesuai kebutuhan.
+
+Pada microservice, tahapan flownya adalah:
+1. User mengakses system menggunakan aplikasi atau website dan yang tampil di sisi user terlebih dahulu adalah sisi front end.
+2. Sisi front end akan melakukan request ke sisi back end melalui API, sesuai dengan service yang sedang diakses user. Contohnya, ketika user mengakses service user, maka front end akan mengakses back end bagian service user.
+3. Ketika melakukan request ke sisi back end, front end akan mengirimkan JWT token yang sebelumnya sudah didapatkan ketika menjalankan proses authentication.
+4. Sisi back end kemudian mengolah request dari sisi front end dan melakukan pengambilan/input/update/delete data ke database.
+5. Database kemudian memberikan response ke back end. Apabila sebelumnya back end melakukan proses pengambilan data, maka back end akan mengirimkan data tersebut ke sisi front end. Tetapi apabila proses yang dilakukan back end adalah input/edit/delete data, sisi back end akan memberikan notifikasi sebagai response untuk sisi front end.
+6. Sisi front end kemudian menampilkan response dari back end.
